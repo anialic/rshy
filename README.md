@@ -1,9 +1,7 @@
 <h1 align="center">flakey</h1>
-<p align="center">Modular Nix configuration framework</p>
+<p align="center">Flakey: An All-in-One NixOS Framework with Flakes</p>
 
-## Introduction
-
-flakey is a minimal framework for managing NixOS/Darwin/Home Manager configurations. It provides a module/node abstraction with dependency tracking and validation.
+flakey is a minimal framework for managing NixOS/Darwin/Home Manager configurations.
 
 For general-purpose flake composition, consider flake-parts.
 
