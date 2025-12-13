@@ -39,6 +39,7 @@
     system = "x86_64-linux";
     base.enable = true;
     base.hostName = "my-machine";
+    extraModules = [ ];
   };
 }
 ```
@@ -65,6 +66,18 @@ exclude = { name, ... }:
   let c = builtins.substring 0 1 name;
   in c == "_" || c == "." || name == "flake.nix";
 ```
+
+## Module arguments:
+
+| Arg | Description |
+|-----|-------------|
+| `node` | Current node config |
+| `nodes` | All node configs |
+| `name` | Node name |
+| `system` | System string |
+| `pkgs` | nixpkgs for this system |
+| `pkgsFor` | nixpkgs abstraction: `pkgs = pkgsFor "aarch64-linux` |
+| `...` | Everything from `args` |
 
 ## Module
 
@@ -103,17 +116,6 @@ Modules can be split across files and merged:
   };
 }
 ```
-
-Module arguments:
-
-| Arg | Description |
-|-----|-------------|
-| `node` | Current node config with `_name`, `_system`, `_target` |
-| `nodes` | All node configs |
-| `name` | Node name |
-| `system` | System string |
-| `pkgs` | nixpkgs for this system |
-| `...` | Everything from `args` |
 
 ## Node
 
